@@ -1,0 +1,29 @@
+﻿@page "/firstpage"
+
+<h1>FirstPage</h1>
+
+<input type="text" @bind="@txt_input"/>
+<button id="btn_input" @onclick="InputLabelText">클릭</button>
+
+<label id="lbl_txt">@input_text</label>
+
+@code {
+
+    [Parameter]
+    public string txt_input { get; set; }
+
+    private string input_text = "";
+
+    private void InputLabelText()
+    {
+        if(input_text == "")
+        {
+            input_text = txt_input;
+        }
+        else
+        {
+            input_text = "오류";
+        }
+
+    }
+}
