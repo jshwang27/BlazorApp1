@@ -51,6 +51,24 @@ else
     </table>
 }
 
+
+<h4>Mat Table</h4>
+
+<MatTable Items="@people" class="mat-elevation-z5">
+    <MatTableHeader>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>EmailAddress</th>
+    </MatTableHeader>
+    <MatTableRow>
+        <td>@context.FirstName</td>
+        <td>@context.LastName</td>
+        <td>@context.EmailAddress</td>
+    </MatTableRow>
+</MatTable>
+
+
+
 @code {
     private List<PersonModel> people;
     private DisplayPersonModel newPerson = new DisplayPersonModel();

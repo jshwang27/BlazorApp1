@@ -16,6 +16,7 @@ using Microsoft.Extensions.Hosting;
 using BlazorApp1.Areas.Identity;
 using BlazorApp1.Data;
 using DataAccessLibrary;
+using System.Net.Http;
 
 namespace BlazorApp1
 {
@@ -43,6 +44,7 @@ namespace BlazorApp1
             services.AddSingleton<WeatherForecastService>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IPeopleData, PeopleData>();
+            services.AddScoped<HttpClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
