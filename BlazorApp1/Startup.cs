@@ -17,6 +17,7 @@ using BlazorApp1.Areas.Identity;
 using BlazorApp1.Data;
 using DataAccessLibrary;
 using System.Net.Http;
+using BlazorApp1.Services;
 
 namespace BlazorApp1
 {
@@ -45,6 +46,7 @@ namespace BlazorApp1
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IPeopleData, PeopleData>();
             services.AddScoped<HttpClient>();
+            services.AddScoped<IFileUpload, FileUpload>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
